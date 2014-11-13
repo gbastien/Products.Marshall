@@ -329,6 +329,8 @@ def marshall_value(value):
 
     if isinstance(value, str):
         return value, 'str'
+    elif isinstance(value, unicode):
+        return value.encode('utf-8'), 'str'
     elif isinstance(value, int):
         return str(value), 'int'
     elif isinstance(value, float):
